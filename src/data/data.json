@@ -24,8 +24,8 @@
             "fruta1": {
                 "January": 100,
                 "February": 450,
-                "March": 400,
-                "April": 550
+                "March": 200,
+                "April": 150
             },
             "fruta2": {
                 "January": 500,
@@ -65,9 +65,9 @@
         "camisas": {
             "camisa1": {
                 "January": 130,
-                "February": 350,
-                "March": 500,
-                "April": 250
+                "February": 150,
+                "March": 530,
+                "April": 600
             },
             "camisa2": {
                 "January": 130,

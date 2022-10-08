@@ -37,7 +37,7 @@ export default {
                 labels: [],
                 datasets: [
                     {
-                        label: 'Data One',
+                        label: 'Ventas',
                         backgroundColor: '#60a5fa',
                         data: [],
                     },
@@ -86,7 +86,10 @@ export default {
     <div class="flex justify-around items-center my-5">
         <div>
             <span class="pr-2">Categorias: </span>
-            <select v-model="category" class="border-black border rounded-lg">
+            <select
+                v-model="category"
+                class="border-black border rounded-lg outline-none"
+            >
                 <option v-for="(item, i) in categories" :key="i" :value="item">
                     {{ item }}
                 </option>
@@ -94,7 +97,10 @@ export default {
         </div>
         <div>
             <span class="pr-2">Productos:</span>
-            <select v-model="product" class="border-black border rounded-lg">
+            <select
+                v-model="product"
+                class="border-black border rounded-lg outline-none"
+            >
                 <option v-for="(item, i) in products" :key="i" :value="item">
                     {{ item }}
                 </option>
@@ -102,12 +108,16 @@ export default {
         </div>
         <div>
             <span class="pr-2">Marcas:</span>
-            <select v-model="brand" class="border-black border rounded-lg">
+            <select
+                v-model="brand"
+                class="border-black border rounded-lg outline-none"
+            >
                 <option v-for="(item, i) in brands" :key="i" :value="item">
                     {{ item }}
                 </option>
             </select>
         </div>
     </div>
-    <Bar :chart-data="chartData" :chart-options="chartOptions" :height="500" />
+    <h2 class="text-center">Sales By Month for:</h2>
+    <Bar :chart-data="chartData" :chart-options="chartOptions" :height="400" />
 </template>
