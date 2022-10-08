@@ -83,26 +83,26 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="flex justify-around items-center my-5">
         <div>
-            <span>Categorias:</span>
-            <select v-model="category">
+            <span class="pr-2">Categorias: </span>
+            <select v-model="category" class="border-black border rounded-lg">
                 <option v-for="(item, i) in categories" :key="i" :value="item">
                     {{ item }}
                 </option>
             </select>
         </div>
         <div>
-            <span>Productos:</span>
-            <select v-model="product">
+            <span class="pr-2">Productos:</span>
+            <select v-model="product" class="border-black border rounded-lg">
                 <option v-for="(item, i) in products" :key="i" :value="item">
                     {{ item }}
                 </option>
             </select>
         </div>
         <div>
-            <span>Marcas:</span>
-            <select v-model="brand">
+            <span class="pr-2">Marcas:</span>
+            <select v-model="brand" class="border-black border rounded-lg">
                 <option v-for="(item, i) in brands" :key="i" :value="item">
                     {{ item }}
                 </option>
