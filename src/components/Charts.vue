@@ -1,0 +1,113 @@
+<script>
+import salesData from '../data/data.json';
+import { Bar } from 'vue-chartjs';
+import {
+    Chart as ChartJS,
+    Title,
+    Tooltip,
+    Legend,
+    BarElement,
+    CategoryScale,
+    LinearScale,
+} from 'chart.js';
+
+ChartJS.register(
+    Title,
+    Tooltip,
+    Legend,
+    BarElement,
+    CategoryScale,
+    LinearScale
+);
+
+export default {
+    name: 'BarChart',
+    components: { Bar },
+
+    data() {
+        return {
+            categories: Object.keys(salesData),
+            products: [],
+            brands: [],
+            category: '',
+            product: '',
+            brand: '',
+            salesData: salesData,
+            chartData: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Data One',
+                        backgroundColor: '#60a5fa',
+                        data: [],
+                    },
+                ],
+            },
+            chartOptions: {
+                responsive: true,
+                maintainAspectRatio: false,
+            },
+        };
+    },
+    mounted() {
+        this.category = this.categories[0];
+        this.products = Object.keys(salesData[this.category]);
+        this.product = this.products[0];
+        this.brands = Object.keys(salesData[this.category][this.product]);
+        this.brand = this.brands[0];
+        this.chartData.labels = Object.keys(
+            salesData[this.category][this.product][this.brand]
+        );
+        this.chartData.datasets[0].data = Object.values(
+            salesData[this.category][this.product][this.brand]
+        );
+    },
+    watch: {
+        category() {
+            this.products = Object.keys(salesData[this.category]);
+            this.product = this.products[0];
+            this.brands = Object.keys(salesData[this.category][this.product]);
+            this.brand = this.brands[0];
+        },
+        product() {
+            this.brands = Object.keys(salesData[this.category][this.product]);
+            this.brand = this.brands[0];
+        },
+        brand() {
+            this.chartData.datasets[0].data = Object.values(
+                salesData[this.category][this.product][this.brand]
+            );
+        },
+    },
+};
+</script>
+
+<template>
+    <div>
+        <div>
+            <span>Categorias:</span>
+            <select v-model="category">
+                <option v-for="(item, i) in categories" :key="i" :value="item">
+                    {{ item }}
+                </option>
+            </select>
+        </div>
+        <div>
+            <span>Productos:</span>
+            <select v-model="product">
+                <option v-for="(item, i) in products" :key="i" :value="item">
+                    {{ item }}
+                </option>
+            </select>
+        </div>
+        <div>
+            <span>Marcas:</span>
+            <select v-model="brand">
+                <option v-for="(item, i) in brands" :key="i" :value="item">
+                    {{ item }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <Bar :chart-data="chartData" :chart-options="chartOptions" :height="500" />
+</template>

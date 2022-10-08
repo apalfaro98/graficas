@@ -1,0 +1,86 @@
+{
+    "comida": {
+        "cereales": {
+            "cereal1": {
+                "January": 100,
+                "February": 450,
+                "March": 400,
+                "April": 550
+            },
+            "cereal2": {
+                "January": 500,
+                "February": 410,
+                "March": 200,
+                "April": 600
+            },
+            "cereal3": {
+                "January": 200,
+                "February": 430,
+                "March": 400,
+                "April": 150
+            }
+        },
+        "frutas": {
+            "fruta1": {
+                "January": 100,
+                "February": 450,
+                "March": 400,
+                "April": 550
+            },
+            "fruta2": {
+                "January": 500,
+                "February": 410,
+                "March": 200,
+                "April": 600
+            },
+            "fruta3": {
+                "January": 200,
+                "February": 430,
+                "March": 400,
+                "April": 150
+            }
+        }
+    },
+    "ropa": {
+        "pantalones": {
+            "pantalon1": {
+                "January": 130,
+                "February": 350,
+                "March": 500,
+                "April": 250
+            },
+            "pantalon2": {
+                "January": 530,
+                "February": 130,
+                "March": 270,
+                "April": 600
+            },
+            "pantalon3": {
+                "January": 200,
+                "February": 430,
+                "March": 400,
+                "April": 150
+            }
+        },
+        "camisas": {
+            "camisa1": {
+                "January": 130,
+                "February": 350,
+                "March": 500,
+                "April": 250
+            },
+            "camisa2": {
+                "January": 130,
+                "February": 230,
+                "March": 370,
+                "April": 400
+            },
+            "camisa3": {
+                "January": 500,
+                "February": 430,
+                "March": 300,
+                "April": 250
+            }
+        }
+    }
+}

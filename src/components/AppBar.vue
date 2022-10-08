@@ -4,7 +4,7 @@ export default {};
 
 <template>
     <div
-        class="w-screen h-12 bg-blue-400 flex justify-between items-center text-lg text-white"
+        class="w-screen h-12 bg-blue-400 flex justify-between items-center text-lg text-white pl-5"
     >
         <div>
             <button>Menu</button>
